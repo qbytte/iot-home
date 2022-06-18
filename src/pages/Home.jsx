@@ -25,7 +25,7 @@ const Home = () => {
           link="temps"
         />
       </div>
-      <a href="https://github.com/qbytte" target="_blank">
+      <a href="https://github.com/qbytte" target="_blank" rel="noreferrer">
         <div className="GitHub">
           <img src={gitHub} alt="Github" />
         </div>
