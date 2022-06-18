@@ -1,0 +1,14 @@
+.Temps {
+    font-size: 7.2rem;
+    margin-block: 10px;
+
+}
+
+.Temps .TempSymbol {
+    font-weight: 100;
+}
+
+.Temps .TempType {
+    font-size: 3.2rem;
+    font-weight: 100;
+}

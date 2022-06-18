@@ -1,9 +1,61 @@
-import React from 'react'
+import React from "react";
+import { useState, useEffect } from "react";
+import Temps from '../components/Temps'
 
 const RoomTemp = () => {
-  return (
-    <div>RoomTemp</div>
-  )
-}
+  const [temps, setTemps] = useState({});
 
-export default RoomTemp
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "https://arduino-led-48439-default-rtdb.firebaseio.com/temp.json"
+      );
+      const json = await response.json();
+      return json;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    (async () => {
+      const getData = async () => {
+        const data = await fetchData();
+        setTemps(data);
+        console.log(data);
+      };
+
+      await getData();
+
+      setInterval(async () => {
+        await getData();
+      }, 60000);
+    })();
+  }, []);
+
+  return (
+    <>
+      <h1>
+        Room <span>Temperature</span>
+      </h1>
+      <Temps 
+        value={temps.c}
+        type="celcius"
+        isTemp
+      />
+      <Temps 
+        value={temps.f}
+        type="fahrenheit"
+        isTemp
+      />
+      <h1 className="Humidity">
+        <span>Humidity</span>
+      </h1>
+      <Temps 
+        value={temps.h}
+      />
+    </>
+  );
+};
+
+export default RoomTemp;
