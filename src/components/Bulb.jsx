@@ -39,7 +39,6 @@ const Bulb = () => {
     (async () => {
       const led = await fetchData();
       setIsLit(led);
-      console.log(led);
     })();
   }, []);
 

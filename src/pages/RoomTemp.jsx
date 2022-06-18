@@ -23,7 +23,6 @@ const RoomTemp = () => {
       const getData = async () => {
         const data = await fetchData();
         setTemps(data);
-        console.log(data);
       };
 
       await getData();

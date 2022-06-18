@@ -1,17 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Card.css";
 
-const Card = ({ img, title, desc }) => {
+const Card = ({ img, title, desc, link }) => {
   return (
-    <div className="Card">
-      <div className="Card-Header">
-        <div>
-          <img src={img} alt="" aria-hidden="true" />
+    <Link to={link}>
+      <div className="Card">
+        <div className="Card-Header">
+          <div>
+            <img src={img} alt="" aria-hidden="true" />
+          </div>
+          <header>{title}</header>
         </div>
-        <header>{title}</header>
+        <p className="Card-Desc">{desc}</p>
       </div>
-      <p className="Card-Desc">{desc}</p>
-    </div>
+    </Link>
   );
 };
 
