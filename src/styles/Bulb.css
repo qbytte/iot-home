@@ -1,0 +1,17 @@
+.Bulb {
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: #272727;
+    height: 258px;
+    width: 258px;
+    font-family: inherit;
+    font-size: 4.8rem;
+    color: #747474;
+    transition: 400ms background;
+}
+
+.Bulb.Active {
+    background: #FFFFFF;
+    color: #747474;
+}

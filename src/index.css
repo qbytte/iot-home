@@ -15,3 +15,7 @@ body {
   color: #ffffff;
   font-family: "Poppins", sans-serif;
 }
+
+h1 span {
+  font-weight: 100;
+}
