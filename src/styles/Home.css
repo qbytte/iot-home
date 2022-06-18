@@ -1,0 +1,20 @@
+.Cards-Container {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+h1 span {
+  font-weight: 100;
+}
+
+.GitHub {
+    width: 42px;
+    position: absolute;
+    bottom: 26px;
+}
+
+.GitHub img {
+  max-width: 100%;
+}

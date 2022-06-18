@@ -6,6 +6,7 @@
 
 html {
   font-size: 62.5%;
+  height: 100vh;
 }
 
 body {
@@ -13,8 +14,4 @@ body {
   background: #353531;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
-}
-
-#root {
-  min-height: 100vh;
 }
