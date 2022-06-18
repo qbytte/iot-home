@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Temps from '../components/Temps'
+import Temps from "../components/Temps";
+import BackBtn from "../components/BackBtn";
 
 const RoomTemp = () => {
   const [temps, setTemps] = useState({});
@@ -35,25 +36,16 @@ const RoomTemp = () => {
 
   return (
     <>
+      <BackBtn />
       <h1>
         Room <span>Temperature</span>
       </h1>
-      <Temps 
-        value={temps.c}
-        type="celcius"
-        isTemp
-      />
-      <Temps 
-        value={temps.f}
-        type="fahrenheit"
-        isTemp
-      />
+      <Temps value={temps.c} type="celcius" isTemp />
+      <Temps value={temps.f} type="fahrenheit" isTemp />
       <h1 className="Humidity">
         <span>Humidity</span>
       </h1>
-      <Temps 
-        value={temps.h}
-      />
+      <Temps value={temps.h} />
     </>
   );
 };
