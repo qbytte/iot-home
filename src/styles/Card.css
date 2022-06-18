@@ -1,0 +1,28 @@
+.Card {
+    background: #272727;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.Card-Header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Card-Header div {
+    width: 40px;
+}
+
+.Card-Header img {
+    max-width: 100%;
+}
+
+.Card-Header header {
+    font-weight: 300;
+    font-size: 2.4rem;
+}
+
+.Card-Desc {
+    font-size: 1.4rem;
+    font-weight: 200;
+}
