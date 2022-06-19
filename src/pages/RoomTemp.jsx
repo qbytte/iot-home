@@ -9,31 +9,21 @@ const RoomTemp = () => {
   const [temps, setTemps] = useState({});
   const onlineStatus = useOnlineStatus();
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        "https://arduino-led-48439-default-rtdb.firebaseio.com/temp.json"
-      );
-      const json = await response.json();
-      return json;
-    } catch (error) {
-      console.error(error);
-    }
+  const fetchData = () => {
+    fetch("https://arduino-led-48439-default-rtdb.firebaseio.com/temp.json")
+      .then((response) => response.json())
+      .then((response) => setTemps(response))
+      .catch((error) => console.error(error));
   };
 
   useEffect(() => {
-    (async () => {
-      const getData = async () => {
-        const data = await fetchData();
-        setTemps(data);
-      };
+    fetchData();
 
-      await getData();
+    const interval = setInterval(() => {
+      fetchData();
+    }, 30000);
 
-      setInterval(async () => {
-        await getData();
-      }, 60000);
-    })();
+    return () => clearInterval(interval);
   }, []);
 
   return (
