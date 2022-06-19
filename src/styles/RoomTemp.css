@@ -6,3 +6,17 @@
     transform: translateX(-50%);
     bottom: 80px;
 }
+
+.Refresh-Btn {
+    position: absolute;
+    bottom: 26px;
+    right: 40px;
+    width: 42px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.Refresh-Btn img {
+    width: 100%;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Temps from "../components/Temps";
 import BackBtn from "../components/BackBtn";
+import RefreshBtn from "../static/arrows-rotate-solid.svg";
 import { useOnlineStatus } from "../hooks/useOnlineStatus";
 import "../styles/RoomTemp.css";
 
@@ -21,7 +22,7 @@ const RoomTemp = () => {
 
     const interval = setInterval(() => {
       fetchData();
-    }, 30000);
+    }, 60000);
 
     return () => clearInterval(interval);
   }, []);
@@ -39,6 +40,11 @@ const RoomTemp = () => {
       </h1>
       <Temps value={temps.h} offline={onlineStatus} />
       {!onlineStatus && <p className="Offline-Indicator">No connection</p>}
+      {onlineStatus && (
+        <button className="Refresh-Btn" onClick={fetchData}>
+          <img src={RefreshBtn} alt="" />
+        </button>
+      )}
     </>
   );
 };
