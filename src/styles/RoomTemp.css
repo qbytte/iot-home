@@ -1,0 +1,8 @@
+.Offline-Indicator {
+    color: #E2635C;
+    font-size: 2.0rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 80px;
+}

@@ -15,3 +15,8 @@
     background: #FFFFFF;
     color: #747474;
 }
+
+.Bulb.Offline {
+    background: #E2635C;
+    color: #353531;
+}

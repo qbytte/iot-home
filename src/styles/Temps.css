@@ -1,6 +1,7 @@
 .Temps {
     font-size: 7.2rem;
     margin-block: 10px;
+    transition: 300ms color;
 
 }
 
@@ -11,4 +12,8 @@
 .Temps .TempType {
     font-size: 3.2rem;
     font-weight: 100;
+}
+
+.Temps.Offline {
+    color: #747474;
 }

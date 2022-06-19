@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import '../styles/Bulb.css'
 
-const Bulb = () => {
+const Bulb = ({ offline }) => {
   const [isLit, setIsLit] = useState(false);
 
   const fetchData = async () => {
@@ -42,8 +42,8 @@ const Bulb = () => {
     })();
   }, []);
 
-  return <button onClick={handlePress} className={`Bulb ${isLit ? "Active" : ""}`}>{
-      isLit ? "ON" : "OFF"
+  return <button disabled={offline} onClick={handlePress} className={`Bulb ${isLit ? "Active" : ""} ${offline ? "Offline" : ""}`}>{
+      isLit ? "ON" : offline ? "OFFLINE" : "OFF"
     }</button>;
 };
 

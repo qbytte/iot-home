@@ -2,9 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Temps from "../components/Temps";
 import BackBtn from "../components/BackBtn";
+import { useOnlineStatus } from "../hooks/useOnlineStatus";
+import "../styles/RoomTemp.css";
 
 const RoomTemp = () => {
   const [temps, setTemps] = useState({});
+  const onlineStatus = useOnlineStatus();
 
   const fetchData = async () => {
     try {
@@ -39,12 +42,13 @@ const RoomTemp = () => {
       <h1>
         Room <span>Temperature</span>
       </h1>
-      <Temps value={temps.c} type="celcius" isTemp />
-      <Temps value={temps.f} type="fahrenheit" isTemp />
+      <Temps value={temps.c} type="celcius" isTemp offline={onlineStatus} />
+      <Temps value={temps.f} type="fahrenheit" isTemp offline={onlineStatus} />
       <h1 className="Humidity">
         <span>Humidity</span>
       </h1>
-      <Temps value={temps.h} />
+      <Temps value={temps.h} offline={onlineStatus} />
+      {!onlineStatus && <p className="Offline-Indicator">No connection</p>}
     </>
   );
 };
